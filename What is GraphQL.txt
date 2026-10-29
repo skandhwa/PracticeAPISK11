@@ -1,0 +1,113 @@
+What is GraphQL?
+
+GraphQL is a query language for APIs developed by Meta Platforms.
+
+With GraphQL, the client specifies exactly what data it needs, and the server returns only that data.
+
+Example
+
+Suppose you need a user's name and email.
+
+GraphQL Query
+
+query {
+  user(id: 1) {
+    name
+    email
+  }
+}
+
+Response
+
+{
+  "data": {
+    "user": {
+      "name": "John",
+      "email": "john@test.com"
+    }
+  }
+}
+
+The client gets only name and email, nothing extra.
+
+REST API Example
+
+Request
+
+GET /users/1
+
+Response
+
+{
+  "id": 1,
+  "name": "John",
+  "email": "john@test.com",
+  "phone": "1234567890",
+  "address": "Hyderabad"
+}
+
+The server decides what fields to return.
+
+GraphQL vs REST API
+Feature	REST API	GraphQL
+Endpoints	Multiple endpoints	Usually single endpoint
+Data Retrieval	Fixed response structure	Client chooses fields
+Over-fetching	Possible	Avoided
+Under-fetching	Possible	Avoided
+Versioning	Often uses v1, v2 APIs	Usually no versioning needed
+Multiple Resource Fetch	Multiple API calls	Single query
+Learning Curve	Easier	Slightly more complex
+Performance	Good	Can be more efficient for complex data
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://countries.trevorblades.com/graphql
+
+query {
+  countries {
+    code
+    name
+    capital
+  }
+}
+
+
+
+https://rickandmortyapi.com/graphql
+
+query {
+  characters(page: 1) {
+    results {
+      id
+      name
+      status
+      species
+    }
+  }
+}
+
+
+https://swapi-graphql.netlify.app/.netlify/functions/index
+
+query {
+  allFilms {
+    films {
+      title
+      releaseDate
+      director
+    }
+  }
+}
+
+
+
